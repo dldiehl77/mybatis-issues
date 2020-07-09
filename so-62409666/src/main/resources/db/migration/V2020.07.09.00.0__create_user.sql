@@ -1,0 +1,5 @@
+CREATE TABLE user (
+    id INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    CONSTRAINT PK_user PRIMARY KEY (id)
+);

@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active: unit-test
+
+---
+# common
+spring:
+  profiles: common
+
+  cache:
+    jcache:
+      config: classpath:ehcache.xml
+
+server:
+  port: 8100
+  servlet:
+    context-path: /
+
+mybatis:
+  type-aliases-package: test.model
+  configuration:
+    jdbc-type-for-null: NULL
+    cache-enabled: false
+    map-underscore-to-camel-case: true
+
+---
+##### unit-test #####
+spring:
+  profiles: unit-test
+  profiles.include: common
+
